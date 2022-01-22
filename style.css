@@ -1,0 +1,67 @@
+body {
+  font-family: 'Raleway', sans-serif;
+  color: #222;
+  line-height: 1.5em;
+  font-weight: 300;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  background-color: #2F4858;
+}
+
+.loading {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border-top: 7px dotted #C9EA42;
+  position: relative;
+  box-sizing: border-box;
+  animation: rotation 5s linear infinite;
+}
+
+.loading::after,
+.loading::before {
+  content: '';
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top: -7px;
+  left: 0;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+
+.loading::after {
+  border-top: 7px dotted #00D8FF;
+  transform: rotate(120deg);
+}
+
+.loading::before {
+  border-top: 7px dotted #FF6870;
+  transform: rotate(-120deg);
+}
+
+.loading span{
+  position: absolute;
+  color: #fff;
+  font-size: 20px;
+  width: 200px;
+  height: 200px;
+  line-height: 200px;
+  text-align: center;
+  animation: stopRotation 5s linear infinite;
+}
+
+@keyframes rotation {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes stopRotation {
+  to {
+    transform: rotate(-360deg);
+  }
+}
